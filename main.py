@@ -19,7 +19,7 @@ def count_words(cleaned_words):
             word_count[word] = 1
     return word_count
 
-file = open("hamlet-plain.txt","r")
+file = open("odyssey.txt","r")
 wordlist = file.read().split(" ")
 
 
@@ -37,6 +37,5 @@ plt.bar(range(len(values)), values, align='center')
 plt.xticks(range(len(labels)), list(labels))
 plt.show()
 
-print(words_final)
 
 
