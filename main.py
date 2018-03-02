@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-
+import math
 substrings_to_replace = [";","\n",":",",","?","!",".","'"] + list(map(lambda x : str(x),range(0,10)))
 
 def clean_words(wordlist):
@@ -33,8 +33,12 @@ words_final = [word_count_sorted[idx] for idx in range(100)]
 labels = [k for k,v in words_final]
 values = [v for k,v in words_final]
 
-plt.bar(range(len(values)), values, align='center')
+# plt.bar(range(len(values)), values, align='center')
 plt.xticks(range(len(labels)), list(labels))
+plt.plot(values,'-',color="green",label="x")
+log_values = [math.log(x,math.e) * 200  for x in values]
+plt.plot(log_values,"-",color="blue",label="log x")
+plt.legend()
 plt.show()
 
 
